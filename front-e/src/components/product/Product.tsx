@@ -1,6 +1,10 @@
+'use client';
+
 import { ProductCard } from '@/components/product/ProductCard';
 import { Title } from '../Title';
 import { productDataType } from '@/components/product/ProductCard';
+import { useEffect, useState } from 'react';
+import { api } from '@/axios';
 
 export const productData = [
   {
