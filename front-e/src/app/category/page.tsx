@@ -23,7 +23,7 @@ const categoryData = [
   },
 ];
 
-export const sizeData = [
+const sizeData = [
   {
     size: 'Free',
   },

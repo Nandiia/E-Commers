@@ -1,7 +1,7 @@
 import { ProductCardSave } from '@/components/productSave/ProductCardSave';
 import { Title } from '@/components/Title';
 
-export const savedProductData = [
+const savedProductData = [
   {
     image: '/picture/coverCarousel/image.png',
     title: 'product',

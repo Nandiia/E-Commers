@@ -1,10 +1,37 @@
-import { sizeData } from '@/app/category/page';
 import { TiStar } from 'react-icons/ti';
 import { TiStarHalf } from 'react-icons/ti';
 import { ReviewComp } from './ReviewComp';
 import { GiveReview } from './GiveReview';
 
-export const starData = [<TiStar />, <TiStar />, <TiStarHalf />];
+const sizeData = [
+  {
+    size: 'Free',
+  },
+  {
+    size: 'S',
+  },
+  {
+    size: 'M',
+  },
+  {
+    size: 'L',
+  },
+  {
+    size: 'XL',
+  },
+  {
+    size: '2XL',
+  },
+  {
+    size: '2XL',
+  },
+];
+
+export const starData = [
+  <TiStar key={1} />,
+  <TiStar key={2} />,
+  <TiStarHalf key={3} />,
+];
 
 export const ReviewAll = () => {
   return (

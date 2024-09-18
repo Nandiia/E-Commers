@@ -1,10 +1,33 @@
 'use client';
 
-import { sizeData } from '@/app/category/page';
 import { CiHeart } from 'react-icons/ci';
 import { ReviewAll } from './ReviewAll';
 import { useEffect, useState } from 'react';
 import { setUncaughtExceptionCaptureCallback } from 'process';
+
+const sizeData = [
+  {
+    size: 'Free',
+  },
+  {
+    size: 'S',
+  },
+  {
+    size: 'M',
+  },
+  {
+    size: 'L',
+  },
+  {
+    size: 'XL',
+  },
+  {
+    size: '2XL',
+  },
+  {
+    size: '2XL',
+  },
+];
 
 export const ProductInfo = () => {
   const [slectedSize, setSelectedSize] = useState<string>('');
