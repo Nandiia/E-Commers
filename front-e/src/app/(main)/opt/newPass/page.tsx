@@ -1,10 +1,17 @@
+'use client';
+
 import Link from 'next/link';
 
-export default function Forget() {
+export default function newPass() {
   const inputData = [
     {
-      placeholder: 'Имэйл хаяг оруулах',
-      type: 'email',
+      placeholder: 'Шинэ нууц үг',
+      type: 'password',
+    },
+
+    {
+      placeholder: 'Шинэ нууц үг давтах',
+      type: 'password',
     },
   ];
 
@@ -24,9 +31,9 @@ export default function Forget() {
             );
           })}
 
-          <Link href="/opt">
+          <Link href="/login">
             <button className="w-full h-fit border py-2 rounded-md bg-black text-white text-[14px]">
-              Илгээх
+              Үүсгэх
             </button>
           </Link>
         </form>

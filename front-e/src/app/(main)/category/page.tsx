@@ -1,3 +1,4 @@
+'use client';
 import { CategoryProductCard } from '@/components/product/CategoryProductCard';
 import { productData } from '@/components/product/Product';
 import { ProductCard } from '@/components/product/ProductCard';

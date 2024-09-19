@@ -1,3 +1,5 @@
+'use client';
+
 import { Title } from '@/components/Title';
 
 import { CategoryProductCard } from '@/components/product/CategoryProductCard';

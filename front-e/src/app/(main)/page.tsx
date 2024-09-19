@@ -24,10 +24,8 @@ export default function Home() {
 
       console.log(process.env.API);
 
-      const result = await axios.get('http://localhost:3001/');
-
       const res = await api.get('/');
-      console.log('data fetched');
+
       setRes(res.data.message);
     };
 
