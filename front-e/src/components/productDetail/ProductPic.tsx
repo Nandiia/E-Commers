@@ -1,44 +1,43 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export const ProductPic = () => {
-  // const productImageData = [
-  //   {
-  //     productImage: '/picture/productImage/pimg1.png',
-  //   },
-  //   {
-  //     productImage: '/picture/productImage/pimg2.png',
-  //   },
-  //   {
-  //     productImage: '/picture/productImage/pimg3.png',
-  //   },
-  //   {
-  //     productImage: '/picture/productImage/pimg4.png',
-  //   },
-  // ];
+interface ProductPicProps {
+  productImage: string[] | undefined; // Массив буюу undefined байж болно
+}
 
-  const productImageData = [
-    '/picture/productImage/pimg1.png',
-    '/picture/productImage/pimg2.png',
-    '/picture/productImage/pimg3.png',
-    '/picture/productImage/pimg4.png',
-  ];
+export type ProductType = {
+  _id: string;
+  productName: string;
+  productImage: string[];
+  price: number;
+  size: string;
+  category: string[];
+  moreInformation?: string;
+};
 
-  const [selectedPic, setSelectedPic] = useState<string>(
-    '/picture/productImage/pimg1.png'
-  );
+export const ProductPic: React.FC<ProductPicProps> = ({ productImage }) => {
+  const [selectedPic, setSelectedPic] = useState<string>('');
+
+  console.log(productImage, 'product shuudee ene chine');
+
+  //productImage uurchlugduh burt useEffect shinechlegdene. productimage massiv bol, 0-s ih bol zuragtai bn gej uzeed setSelectedPic-g shinechlene. selectedPic state-n anhnii utga ni productImage[0] bn.
+  useEffect(() => {
+    if (productImage && productImage.length > 0) {
+      setSelectedPic(productImage[0]);
+    }
+  }, [productImage]);
 
   return (
     <main>
       <div className="flex gap-5 items-center">
         <div className="flex flex-col gap-2 ">
-          {productImageData.map((item, index) => {
+          {productImage?.map((item) => {
             return (
               //   <div key={index} className="w-16 h-16 rounded">
               //     {item.productImage}
               //   </div>
-              <div key={index} className="w-16 h-16 relative">
+              <div key={item} className="w-16 h-16 relative">
                 <Image
                   src={item}
                   alt="productPic"

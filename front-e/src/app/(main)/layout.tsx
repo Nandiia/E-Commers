@@ -3,6 +3,9 @@ import { Inter } from 'next/font/google';
 
 import { Footer } from '@/components/Footer';
 import { Nav } from '@/components/header/Nav';
+import { AuthProvider } from '@/components/contexts/auth.context';
+import { ToastContainer } from 'react-toastify';
+import { CartProvider } from './cart/_components/CartProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,12 +18,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Nav />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <>
+      <CartProvider>
+        <div>
+          <Nav />
+          {children}
+          <Footer />
+        </div>
+      </CartProvider>
+    </>
   );
 }

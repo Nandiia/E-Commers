@@ -3,17 +3,21 @@ import Image from 'next/image';
 
 export type productDataType = {
   // id: number;
-  image: string;
+  image: string[];
   title: string;
   price: number;
   customHeight?: string;
 };
 export const ProductCard = ({
-  image,
+  image = [
+    'https://res.cloudinary.com/dtrxzxl7x/image/upload/v1727323038/kp51fijplii5kedsxmdt.png',
+  ],
   title,
   price,
   customHeight,
 }: productDataType) => {
+  console.log(image, '===');
+
   return (
     <div className="bg-orange-300 rounded-2xl">
       {/* <Image
@@ -27,7 +31,7 @@ export const ProductCard = ({
         className={` relative w-full ${customHeight} overflow-hidden hover:border-black  rounded-2xl `}
       >
         <Image
-          src={image}
+          src={image[0]}
           alt="logo"
           // width={400}
           // height={331}

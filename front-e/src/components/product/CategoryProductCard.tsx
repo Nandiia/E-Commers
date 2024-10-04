@@ -4,7 +4,10 @@ import Image from 'next/image';
 import { productDataType } from './ProductCard';
 
 export const CategoryProductCard = ({
-  image,
+  //зураг хоосон орж ирж байгаа бол undefined гэсэн алдаа заана. бас төрөл (array, string, object etc.) алдаа гарна.
+  image = [
+    'https://res.cloudinary.com/dtrxzxl7x/image/upload/v1727323038/kp51fijplii5kedsxmdt.png',
+  ],
   title,
   price,
 }: productDataType) => {
@@ -18,11 +21,19 @@ export const CategoryProductCard = ({
       /> */}
 
       <div className={` relative w-full h-[331px]`}>
-        <Image src={image} alt="logo" fill className="rounded-2xl" />
+        <Image
+          src={image[0]}
+          alt="logo"
+          fill
+          objectFit="cover"
+          className="rounded-2xl"
+        />
       </div>
       <div className="mt-1">
         <p className="text-[14px]">{title}</p>
         <div className="font-bold mt-1">{price}</div>
+
+        <div></div>
       </div>
     </div>
   );
